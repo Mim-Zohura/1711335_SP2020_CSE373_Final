@@ -29,6 +29,10 @@ class Graph{
 		    nVerts = 0;
 		    s = new Stack<Integer>();
 		  }
+	  public void addVertex(char lab) {
+		    vertexList[nVerts++] = new Vertex(lab);
+		  }
+		  
 }
 public class SP2020_CSE373_Final_Q1_1711335 {
 
