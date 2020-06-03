@@ -7,7 +7,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Iterator;
-import java.util.Stack;
+import java.util.LinkedList;
+import java.util.Scanner;
 class Vertex {
 	  public char label;
 	  public boolean Visited;
