@@ -72,6 +72,25 @@ public class SP2020_CSE373_Final_Q1_1711335 {
 	  int n;
       int e;
       Dfs g = null;
+      int n;
+      int e;
+      Dfs g = null;
+      
+      Scanner sc= new Scanner(System.in);
+      
+      String filename="FinalQ1INPUT.txt";
+      try {
+          BufferedReader br;
+          br = new BufferedReader(new FileReader(new File("C:\\Users\\Mim\\Documents\\Final\\FinalQ1Input.txt")));//open the file
+         
+          String line;
+
+          line = br.readLine();//first line
+
+          String param[] = line.split(" ");
+
+          n = Integer.parseInt(param[0]);
+          e = Integer.parseInt(param[1]);
       Writer writer = null;
 
 	    try {
@@ -100,19 +119,7 @@ public class SP2020_CSE373_Final_Q1_1711335 {
 	    int num = myObj.nextInt();
 	    System.out.println(num);
 	    
-	    BufferedReader br;
-        br = new BufferedReader(new FileReader(new File("FinalQ1INPUT.txt")));//open the file
-        String line;
-
-
-        line = br.readLine();//first line
-
-
-        String param[] = line.split(" ");
-
-
-        n = Integer.parseInt(param[0]);
-        e = Integer.parseInt(param[1]);
+	   
 	    Graph  g1 = new Graph(n);
 
 
