@@ -29,6 +29,28 @@ public class SP2020_CSE373_Final_Q1_1711335 {
         adj[v].add(w);  // Add w to v's list.
         adj[w].add(v);  // Add w to v's list.
     }
+    
+ // A function used by DFS 
+    void DFSUtil(int v, boolean visited[],int parent) {
+        // Mark the current node as visited and print it 
+        visited[v] = true;
+        if(parent==-1){
+        System.out.println("Visited:"+v+" Parent: null");//the first element in the search
+
+        }
+        
+        else{
+        System.out.println("Visited:"+v+" Parent:"+parent);
+          }
+        // Recur for all the vertices adjacent to this vertex 
+        Iterator<Integer> i = adj[v].descendingIterator();
+        while (i.hasNext()) {
+            int n = i.next();
+            if (!visited[n]) {
+                DFSUtil(n, visited,v );
+            }
+        }
+    }
 	 public static void main(String args[]) {
 	  int n;
       int e;
@@ -68,19 +90,7 @@ public class SP2020_CSE373_Final_Q1_1711335 {
           }
             System.out.print("\nEdges:\n{");
             
-      /*      
-      Writer writer = null;
-
-	    try {
-	        writer = new BufferedWriter(new OutputStreamWriter(
-	              new FileOutputStream("FinalQ1Input.txt"), "utf-8"));
-	        writer.write("g.AddEdge()");
-	    } catch (IOException ex) {
-	        // Report
-	    } finally {
-	       try {writer.close();} catch (Exception ex) {//ignore}
-	       }
-	    }*/
+    
 
 	    int count=0;
         while ((line=br.readLine()) != null) {//read a line 
@@ -113,6 +123,6 @@ public class SP2020_CSE373_Final_Q1_1711335 {
 	   
 	  
 	   
+   }
 }
-	 }
 }
