@@ -69,6 +69,8 @@ class Graph{
 		  }
 }
 public class SP2020_CSE373_Final_Q1_1711335 {
+	
+	 public static void main(String args[]) {
 	  int n;
       int e;
       SP2020_CSE373_Final_Q1_1711335 g = null;
@@ -145,21 +147,13 @@ public class SP2020_CSE373_Final_Q1_1711335 {
               
            }
       }
+        
+        System.out.print("\nEnter the source vertex: ");
+        int source= sc.nextInt();
+        g.DFS(source);
 	   
 	  
-	    BufferedReader inFile;
-        inFile = new BufferedReader(new FileReader("C:\\Users\\Mim\\Documents\\Final\\FinalQ1Input.txt"));
-        File file = new File("C:\\Users\\Mim\\Documents\\Final\\FinalQ1Input.txt");
-        Scanner fIn = new Scanner(file);
-        fIn.nextLine(); //skipping the first line!
-        while (fIn.hasNext())
-        {
-           // System.out.print(fIn.next());
-            System.out.print(" Visited Vertex:  ");
-            System.out.print(fIn.nextInt());
-            System.out.print(" Parents:  ");
-            System.out.println(fIn.nextInt());
-        }
-	        
-        fIn.close();
+	   
+}
+	 }
 }
