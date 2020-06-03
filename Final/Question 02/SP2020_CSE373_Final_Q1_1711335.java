@@ -8,7 +8,15 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Stack;
-
+class Vertex {
+	  public char label;
+	  public boolean Visited;
+	  
+	  public Vertex(char lab) {
+	    label = lab;
+	    Visited = false;
+	  }
+	}
 public class SP2020_CSE373_Final_Q1_1711335 {
 
 }
