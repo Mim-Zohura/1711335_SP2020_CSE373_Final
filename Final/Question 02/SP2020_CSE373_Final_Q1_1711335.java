@@ -98,4 +98,19 @@ public class SP2020_CSE373_Final_Q1_1711335 {
         System.out.println("Enter the source vertex: ");
 	    int num = myObj.nextInt();
 	    System.out.println(num);
+	    BufferedReader inFile;
+        inFile = new BufferedReader(new FileReader("C:\\Users\\Mim\\Documents\\Final\\FinalQ1Input.txt"));
+        File file = new File("C:\\Users\\Mim\\Documents\\Final\\FinalQ1Input.txt");
+        Scanner fIn = new Scanner(file);
+        fIn.nextLine(); //skipping the first line!
+        while (fIn.hasNext())
+        {
+           // System.out.print(fIn.next());
+            System.out.print(" Visited Vertex:  ");
+            System.out.print(fIn.nextInt());
+            System.out.print(" Parents:  ");
+            System.out.println(fIn.nextInt());
+        }
+	        
+        fIn.close();
 }
