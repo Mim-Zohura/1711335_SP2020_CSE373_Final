@@ -15,6 +15,7 @@ public class SP2020_CSE373_Final_Q1_1711335 {
 
 	    // Array  of lists for Adjacency List Representation 
 	    private LinkedList<Integer> adj[];
+	    
 	 // Constructor 
 	SP2020_CSE373_Final_Q1_1711335(int v) {
         V = v;
@@ -22,6 +23,11 @@ public class SP2020_CSE373_Final_Q1_1711335 {
         for (int i = 0; i < v; ++i) {
             adj[i] = new LinkedList();
         }
+    }
+	 //Function to add an edge into the Dfs 
+    void addEdge(int v, int w) {
+        adj[v].add(w);  // Add w to v's list.
+        adj[w].add(v);  // Add w to v's list.
     }
 	 public static void main(String args[]) {
 	  int n;
