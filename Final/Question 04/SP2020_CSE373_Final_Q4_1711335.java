@@ -21,10 +21,7 @@ public class SP2020_CSE373_Final_Q4_1711335 {
     void addEdge(int v, int w ,int t) {
         adj[v].add(w);  
         adj[w].add(v);  
-        adj[w].add(t);
-        adj[t].add(v);
-        adj[t].add(w);
-        adj[v].add(t);
+       
         
     }
 	public static void main(String args[]) {
@@ -46,8 +43,7 @@ public class SP2020_CSE373_Final_Q4_1711335 {
 
 	          n = Integer.parseInt(param[0]);
 	          e = Integer.parseInt(param[1]);
-	          s = Integer.parseInt(param[1]);
-	          
+	        
 
 		    g = new Dfs(n);
 	          System.out.println("Reading from FinalQ4Input.txt");
@@ -91,6 +87,7 @@ public class SP2020_CSE373_Final_Q4_1711335 {
 		              
 		           }
 		      }
+		        
 	      }
 	      
 	      catch (FileNotFoundException ex) {
