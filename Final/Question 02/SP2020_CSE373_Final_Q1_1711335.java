@@ -98,6 +98,41 @@ public class SP2020_CSE373_Final_Q1_1711335 {
         System.out.println("Enter the source vertex: ");
 	    int num = myObj.nextInt();
 	    System.out.println(num);
+	    
+	    BufferedReader br;
+        br = new BufferedReader(new FileReader(new File("FinalQ1INPUT.txt")));//open the file
+        String line;
+
+
+        line = br.readLine();//first line
+
+
+        String param[] = line.split(" ");
+
+
+        n = Integer.parseInt(param[0]);
+        e = Integer.parseInt(param[1]);
+	    Graph  g1 = new Graph(n);
+
+
+        for (int i = 0; i < n * 2; i++) {
+
+
+            br.readLine();
+
+
+        }
+
+
+        while ((br.readLine()) != null) {//read a line 
+
+
+            line = br.readLine();//jump the line between    
+            param = line.split(" ");
+            int v = Integer.parseInt(param[0]);
+            int w = Integer.parseInt(param[1]);
+            //add the edge with parameter v and w 
+            g1.addEdge(v, w);
 	    BufferedReader inFile;
         inFile = new BufferedReader(new FileReader("C:\\Users\\Mim\\Documents\\Final\\FinalQ1Input.txt"));
         File file = new File("C:\\Users\\Mim\\Documents\\Final\\FinalQ1Input.txt");
