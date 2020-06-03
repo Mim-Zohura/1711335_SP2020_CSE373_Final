@@ -48,7 +48,7 @@ class Graph{
 		    }
 		    return -1;
 		  }
-	  public void dfs() {
+	  public void SP2020_CSE373_Final_Q1_1711335() {
 		 
 			    vertexList[0].Visited = true;
 			    displayVertex(0);
@@ -71,10 +71,8 @@ class Graph{
 public class SP2020_CSE373_Final_Q1_1711335 {
 	  int n;
       int e;
-      Dfs g = null;
-      int n;
-      int e;
-      Dfs g = null;
+      SP2020_CSE373_Final_Q1_1711335 g = null;
+     
       
       Scanner sc= new Scanner(System.in);
       
@@ -91,6 +89,25 @@ public class SP2020_CSE373_Final_Q1_1711335 {
 
           n = Integer.parseInt(param[0]);
           e = Integer.parseInt(param[1]);
+          
+          g = new SP2020_CSE373_Final_Q1_1711335(n);
+          System.out.println(n+" "+e);
+            
+          System.out.print("Vertices: \n{" );
+          for (int i = 1; i <= n; i++) {
+              if(i==n){
+              System.out.print(br.readLine()+"}");
+              }
+              else{
+              System.out.print(br.readLine()+", ");
+              }
+            if(i%10==0){
+                System.out.println();
+            }
+          }
+            System.out.print("\nEdges:\n{");
+            
+            
       Writer writer = null;
 
 	    try {
@@ -104,21 +121,7 @@ public class SP2020_CSE373_Final_Q1_1711335 {
 	       }
 	    }
 
-			System.out.print("15 32 \n");
-       System.out.println("Vertices : \n { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, \n  10, 11, 12, 13, 14 }");
-       System.out.println("Edges : \n { (0, 1), (0, 2), (1, 3), (2, 3), (1, 6),\n"
-               + "(1, 3), (6, 3), (2, 3), (3, 7), (2, 7),\n"
-               + "(6, 4), (3, 4), (3, 5), (5, 7), (4, 5),\n"
-               + "(4, 9), (6, 9), (9, 10), (4, 10), (5, 10),\n"
-               + "(5, 11), (10, 11), (7, 11), (9, 10), (10, 11),\n"
-               + "(10, 12), (10, 13), (9, 14), (11, 14), (1, 14),\n"
-               + "(2, 14) }");
-	    
-	    Scanner myObj = new Scanner(System.in);
-        System.out.println("Enter the source vertex: ");
-	    int num = myObj.nextInt();
-	    System.out.println(num);
-	    
+			
 	   
 	    Graph  g1 = new Graph(n);
 
