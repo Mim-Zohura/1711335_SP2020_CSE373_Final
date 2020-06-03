@@ -36,6 +36,9 @@ class Graph{
 		    adjMat[start][end] = 1;
 		    adjMat[end][start] = 1;
 		  }
+	  public void displayVertex(int v) {
+		    System.out.print(vertexList[v].label + " ");
+		  }
 		  
 }
 public class SP2020_CSE373_Final_Q1_1711335 {
