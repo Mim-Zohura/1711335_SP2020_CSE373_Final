@@ -48,9 +48,39 @@ class Graph{
 		    return -1;
 		  }
 	  public void dfs() {
-		   
+		 
+			    vertexList[0].Visited = true;
+			    displayVertex(0);
+			    s.push(0);
+			    
+			    while(!s.isEmpty()) {    
+			      int v = getAdjUnvisitedVertex(s.peek());
+			      
+			      if(v == -1) {
+			        s.pop();
+			      } else {
+			        vertexList[v].Visited = true;
+			        displayVertex(v);
+			        s.push(v);
+			      }
+			    }
+			  
 		  }
 }
 public class SP2020_CSE373_Final_Q1_1711335 {
-
+	 
+			System.out.print("15 32 \n");
+       System.out.println("Vertices : \n { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, \n  10, 11, 12, 13, 14 }");
+       System.out.println("Edges : \n { (0, 1), (0, 2), (1, 3), (2, 3), (1, 6),\n"
+               + "(1, 3), (6, 3), (2, 3), (3, 7), (2, 7),\n"
+               + "(6, 4), (3, 4), (3, 5), (5, 7), (4, 5),\n"
+               + "(4, 9), (6, 9), (9, 10), (4, 10), (5, 10),\n"
+               + "(5, 11), (10, 11), (7, 11), (9, 10), (10, 11),\n"
+               + "(10, 12), (10, 13), (9, 14), (11, 14), (1, 14),\n"
+               + "(2, 14) }");
+	    
+	    Scanner myObj = new Scanner(System.in);
+        System.out.println("Enter the source vertex: ");
+	    int num = myObj.nextInt();
+	    System.out.println(num);
 }
