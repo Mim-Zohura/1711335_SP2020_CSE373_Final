@@ -18,11 +18,17 @@ class Vertex {
 	  }
 	}
 class Graph{
-	  private final int MAX_VERTS = 20;
+	  private final int MAX_VERTS;
 	  private Vertex vertexList[];
 	  private int adjMat[][];
 	  private int nVerts;
 	  private Stack<Integer> s;
+	  public Graph() {
+		    vertexList = new Vertex[MAX_VERTS];
+		    adjMat = new int[MAX_VERTS][MAX_VERTS];
+		    nVerts = 0;
+		    s = new Stack<Integer>();
+		  }
 }
 public class SP2020_CSE373_Final_Q1_1711335 {
 
