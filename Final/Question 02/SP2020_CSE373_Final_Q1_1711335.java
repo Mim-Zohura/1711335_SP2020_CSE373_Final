@@ -120,9 +120,13 @@ public class SP2020_CSE373_Final_Q1_1711335 {
         System.out.print("\nEnter the source vertex: ");
         int source= sc.nextInt();
         g.DFS(source);
-	   
-	  
-	   
-   }
+	   }
+      catch (FileNotFoundException ex) {
+          System.out.println("There was an exception! The file was not found!");
+      } catch (IOException ex) {
+          System.out.println("There was an exception handling The file!");
+
+      }
+
 }
 }
