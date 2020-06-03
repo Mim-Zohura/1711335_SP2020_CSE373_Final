@@ -17,6 +17,16 @@ public class SP2020_CSE373_Final_Q4_1711335 {
          adj[i] = new LinkedList();
      }
  }
+	//Function to add an edge into the Dfs 
+    void addEdge(int v, int w ,int t) {
+        adj[v].add(w);  // Add w to v's list.
+        adj[w].add(v);  // Add w to v's list.
+        adj[w].add(t);
+        adj[t].add(v);
+        adj[t].add(w);
+        adj[v].add(t);
+        
+    }
 	public static void main(String args[]) {
 		 int n;
 	      int e;
