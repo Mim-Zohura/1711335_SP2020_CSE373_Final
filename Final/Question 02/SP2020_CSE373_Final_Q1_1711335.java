@@ -32,6 +32,10 @@ class Graph{
 	  public void addVertex(char lab) {
 		    vertexList[nVerts++] = new Vertex(lab);
 		  }
+	  public void addEdge(int start, int end) {
+		    adjMat[start][end] = 1;
+		    adjMat[end][start] = 1;
+		  }
 		  
 }
 public class SP2020_CSE373_Final_Q1_1711335 {
