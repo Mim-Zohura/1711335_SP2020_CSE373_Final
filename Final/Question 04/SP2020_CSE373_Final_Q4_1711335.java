@@ -17,10 +17,10 @@ public class SP2020_CSE373_Final_Q4_1711335 {
          adj[i] = new LinkedList();
      }
  }
-	//Function to add an edge into the Dfs 
+	
     void addEdge(int v, int w ,int t) {
-        adj[v].add(w);  // Add w to v's list.
-        adj[w].add(v);  // Add w to v's list.
+        adj[v].add(w);  
+        adj[w].add(v);  
         adj[w].add(t);
         adj[t].add(v);
         adj[t].add(w);
@@ -75,7 +75,7 @@ public class SP2020_CSE373_Final_Q4_1711335 {
 		          int v = Integer.parseInt(param[0]);
 		          int w = Integer.parseInt(param[1]);
 		          int t = Integer.parseInt(param[1]);
-		          //add the edge with parameter v and w 
+		          
 		          if(count==e){
 		          System.out.print("(S:"+v+", D:"+w+", W:"+t+ ")}");
 		          }
@@ -93,7 +93,12 @@ public class SP2020_CSE373_Final_Q4_1711335 {
 		      }
 	      }
 	      
-	      
+	      catch (FileNotFoundException ex) {
+	          System.out.println("There was an exception! The file was not found!");
+	      } catch (IOException ex) {
+	          System.out.println("There was an exception handling The file!");
+
+	      }	 
 	      
 	}
 }
