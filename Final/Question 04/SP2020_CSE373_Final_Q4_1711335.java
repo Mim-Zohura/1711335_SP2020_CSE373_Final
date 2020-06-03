@@ -75,6 +75,22 @@ public class SP2020_CSE373_Final_Q4_1711335 {
 		          int v = Integer.parseInt(param[0]);
 		          int w = Integer.parseInt(param[1]);
 		          int t = Integer.parseInt(param[1]);
+		          //add the edge with parameter v and w 
+		          if(count==e){
+		          System.out.print("(S:"+v+", D:"+w+", W:"+t+ ")}");
+		          }
+		          else{
+		          System.out.print("(S:"+v+", D:"+w+", W:" +t+"),");
+		          }
+		          
+		          g.addEdge(v, w , t);
+		          
+		          
+		           if(count%5==0){
+		               System.out.println();
+		              
+		           }
+		      }
 	      }
 	      
 	      
