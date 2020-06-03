@@ -17,6 +17,9 @@ class Vertex {
 	    Visited = false;
 	  }
 	}
+class Graph{
+	
+}
 public class SP2020_CSE373_Final_Q1_1711335 {
 
 }
