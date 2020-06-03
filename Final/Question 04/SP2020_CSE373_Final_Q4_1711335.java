@@ -42,6 +42,12 @@ public class SP2020_CSE373_Final_Q4_1711335 {
 	          String line;
 
 	          line = br.readLine();//first line
+	          String param[] = line.split(" ");
+
+	          n = Integer.parseInt(param[0]);
+	          e = Integer.parseInt(param[1]);
+	          s = Integer.parseInt(param[1]);
+	          
 
 		    g = new Dfs(n);
 	          System.out.println("Reading from FinalQ4Input.txt");
@@ -61,7 +67,16 @@ public class SP2020_CSE373_Final_Q4_1711335 {
 	          }
 	            System.out.print("\nEdges:\n{");
 	            
+	            int count=0;
+		        while ((line=br.readLine()) != null) {//read a line 
+		           count++;
+		          
+		          param = line.split(" ");
+		          int v = Integer.parseInt(param[0]);
+		          int w = Integer.parseInt(param[1]);
+		          int t = Integer.parseInt(param[1]);
 	      }
+	      
 	      
 	      
 	}
