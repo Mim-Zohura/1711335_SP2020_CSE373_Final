@@ -107,7 +107,7 @@ public class SP2020_CSE373_Final_Q1_1711335 {
           }
             System.out.print("\nEdges:\n{");
             
-            
+      /*      
       Writer writer = null;
 
 	    try {
@@ -119,7 +119,7 @@ public class SP2020_CSE373_Final_Q1_1711335 {
 	    } finally {
 	       try {writer.close();} catch (Exception ex) {//ignore}
 	       }
-	    }
+	    }*/
 
 	    int count=0;
         while ((line=br.readLine()) != null) {//read a line 
