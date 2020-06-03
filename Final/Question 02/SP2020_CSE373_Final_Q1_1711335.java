@@ -124,7 +124,7 @@ public class SP2020_CSE373_Final_Q1_1711335 {
           System.out.print("("+v+","+w+")}");
           }
           else{
-          System.out.print("("+v+","+w+"),");
+          System.out.print("("+v+","+w+")}");
           }
           
           g.addEdge(v, w);
