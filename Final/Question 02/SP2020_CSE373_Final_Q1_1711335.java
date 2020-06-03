@@ -68,7 +68,22 @@ class Graph{
 		  }
 }
 public class SP2020_CSE373_Final_Q1_1711335 {
-	 
+	  int n;
+      int e;
+      Dfs g = null;
+      Writer writer = null;
+
+	    try {
+	        writer = new BufferedWriter(new OutputStreamWriter(
+	              new FileOutputStream("FinalQ1Input.txt"), "utf-8"));
+	        writer.write("g.AddEdge()");
+	    } catch (IOException ex) {
+	        // Report
+	    } finally {
+	       try {writer.close();} catch (Exception ex) {//ignore}
+	       }
+	    }
+
 			System.out.print("15 32 \n");
        System.out.println("Vertices : \n { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, \n  10, 11, 12, 13, 14 }");
        System.out.println("Edges : \n { (0, 1), (0, 2), (1, 3), (2, 3), (1, 6),\n"
