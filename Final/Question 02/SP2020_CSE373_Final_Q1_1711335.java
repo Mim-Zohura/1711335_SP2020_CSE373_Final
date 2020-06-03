@@ -1,4 +1,12 @@
 package com.nsu.cse373.spring2020.ID1711335;
+
+//References
+//https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/
+//https://www.freecodecamp.org/news/dfs-for-your-next-tech-giant-interview/
+//https://thecodingsimplified.com/depth-first-search-dfs-on-graph-with-implementation/
+//https://thecodingsimplified.com/depth-first-search-dfs-on-graph-with-implementation/
+
+
 import java.io.*; 
 import java.util.*; 
 import java.io.BufferedReader;
@@ -50,6 +58,17 @@ public class SP2020_CSE373_Final_Q1_1711335 {
                 DFSUtil(n, visited,v );
             }
         }
+    }
+    void DFS(int v) {
+        // Mark all the vertices as not visited(set as 
+        // false by default in java) 
+        boolean visited[] = new boolean[V];
+
+        // Call the recursive helper function to print DFS traversal 
+        DFSUtil(v, visited,-1);
+        
+    
+        
     }
 	 public static void main(String args[]) {
 	  int n;
