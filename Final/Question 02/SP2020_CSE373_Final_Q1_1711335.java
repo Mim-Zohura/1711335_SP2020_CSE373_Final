@@ -121,29 +121,32 @@ public class SP2020_CSE373_Final_Q1_1711335 {
 	       }
 	    }
 
-			
+	    int count=0;
+        while ((line=br.readLine()) != null) {//read a line 
+           count++;
+          
+          param = line.split(" ");
+          int v = Integer.parseInt(param[0]);
+          int w = Integer.parseInt(param[1]);
+          
+          //add the edge with parameter v and w 
+          if(count==e){
+          System.out.print("("+v+","+w+")}");
+          }
+          else{
+          System.out.print("("+v+","+w+"),");
+          }
+          
+          g.addEdge(v, w);
+          
+          
+           if(count%5==0){
+               System.out.println();
+              
+           }
+      }
 	   
-	    Graph  g1 = new Graph(n);
-
-
-        for (int i = 0; i < n * 2; i++) {
-
-
-            br.readLine();
-
-
-        }
-
-
-        while ((br.readLine()) != null) {//read a line 
-
-
-            line = br.readLine();//jump the line between    
-            param = line.split(" ");
-            int v = Integer.parseInt(param[0]);
-            int w = Integer.parseInt(param[1]);
-            //add the edge with parameter v and w 
-            g1.addEdge(v, w);
+	  
 	    BufferedReader inFile;
         inFile = new BufferedReader(new FileReader("C:\\Users\\Mim\\Documents\\Final\\FinalQ1Input.txt"));
         File file = new File("C:\\Users\\Mim\\Documents\\Final\\FinalQ1Input.txt");
