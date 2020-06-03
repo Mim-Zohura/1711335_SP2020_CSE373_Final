@@ -39,6 +39,14 @@ class Graph{
 	  public void displayVertex(int v) {
 		    System.out.print(vertexList[v].label + " ");
 		  }
+	  public int getAdjUnvisitedVertex (int v) {
+		    for(int j = 0; j < nVerts; j++) {
+		      if(adjMat[v][j] == 1 && vertexList[j].Visited == false) {
+		        return j;
+		      }
+		    }
+		    return -1;
+		  }
 		  
 }
 public class SP2020_CSE373_Final_Q1_1711335 {
