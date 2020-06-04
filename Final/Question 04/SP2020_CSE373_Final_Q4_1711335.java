@@ -2,21 +2,33 @@ package com.nsu.cse373.spring2020.ID1711335;
 
 import java.io.*;
 import java.util.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Scanner;
 
-public class SP2020_CSE373_Final_Q4_1711335 {
-	 private int V;   // No. of vertices 
 
-	    // Array  of lists for Adjacency List Representation 
+
+
+	public class SP2020_CSE373_Final_Q4_1711335 {
+		private int V;   // No. of vertices 
+
 	    private LinkedList<Integer> adj[];
 	    
 	 // Constructor 
-	Dfs(int v) {
-     V = v;
-     adj = new LinkedList[v];
-     for (int i = 0; i < v; ++i) {
-         adj[i] = new LinkedList();
-     }
- }
+	SP2020_CSE373_Final_Q4_1711335(int v) 
+	{
+		V = v;
+		adj = new LinkedList[v];
+		for (int i = 0; i < v; ++i) 
+		{
+			adj[i] = new LinkedList();
+        }
+    }
 	
     void addEdge(int v, int w ,int t) {
         adj[v].add(w);  
@@ -24,12 +36,61 @@ public class SP2020_CSE373_Final_Q4_1711335 {
        
         
     }
+    private static void dijkstra(int[][] adjacencyMatrix, int startVertex) 
+	{ 
+		int nVertices = adjacencyMatrix[0].length; 
+
+		int[] shortestDistances = new int[nVertices];
+		boolean[] added = new boolean[nVertices]; 
+
+		for (int vertexIndex = 0; vertexIndex < nVertices; vertexIndex++) 
+		{ 
+			shortestDistances[vertexIndex] = Integer.MAX_VALUE; 
+			added[vertexIndex] = false; 
+		} 
+		
+		shortestDistances[startVertex] = 0; 
+
+		
+		int[] parents = new int[nVertices]; 
+		parents[startVertex] = NO_PARENT; 
+
+		// Find shortest path for all vertices
+		
+		for (int i = 1; i < nVertices; i++) 
+		{ 
+
+			int nearestVertex = -1; 
+			int shortestDistance = Integer.MAX_VALUE; 
+			for (int vertexIndex = 0; 	vertexIndex < nVertices; vertexIndex++) 
+			{ 
+				if (!added[vertexIndex] && shortestDistances[vertexIndex] < shortestDistance) 
+				{ 
+					nearestVertex = vertexIndex; 
+					shortestDistance = shortestDistances[vertexIndex]; 
+				} 
+			} 
+
+			
+			added[nearestVertex] = true; 
+ 
+			for (int vertexIndex = 0; vertexIndex < nVertices; vertexIndex++) 
+			{ 
+				int edgeDistance = adjacencyMatrix[nearestVertex][vertexIndex]; 
+				
+				if (edgeDistance > 0 && ((shortestDistance + edgeDistance) < shortestDistances[vertexIndex])) 
+				{ 
+					parents[vertexIndex] = nearestVertex; 
+					shortestDistances[vertexIndex] = shortestDistance + edgeDistance; 
+				} 
+			} 
+		} 
 	public static void main(String args[]) {
 		 int n;
 	      int e;
 	      int s;
-	      Dfs g = null;
-	      scanner sc= new Scanner(System.in);
+	      SP2020_CSE373_Final_Q4_1711335 g = null;
+	      Scanner sc= new Scanner(System.in);
 	      
 	      String filename="FinalQ4INPUT.txt";
 	      try {
@@ -45,7 +106,7 @@ public class SP2020_CSE373_Final_Q4_1711335 {
 	          e = Integer.parseInt(param[1]);
 	        
 
-		    g = new Dfs(n);
+		    g = new SP2020_CSE373_Final_Q4_1711335(n);
 	          System.out.println("Reading from FinalQ4Input.txt");
 	          System.out.println(n+" "+e);
 	            
