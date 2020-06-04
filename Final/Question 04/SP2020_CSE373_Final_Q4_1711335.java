@@ -88,30 +88,39 @@ import java.util.Scanner;
 		private static void printSolution(int startVertex, int[] distances, int[] parents) 
 		{ 
 			int nVertices = distances.length; 
-			System.out.print("Vertex\t Distance\tPath"); 
+			System.out.print("Vertex\t Path\tDistance"); 
 
 			for (int vertexIndex = 0; vertexIndex < nVertices; vertexIndex++) 
             { 
 				if (vertexIndex != startVertex) 
-            { 
+                  { 
 					System.out.print("\n" + startVertex + " to "); 
                     System.out.print(vertexIndex + " \t\t "); 
                     System.out.print(distances[vertexIndex] + "\t\t"); 
                     printPath(vertexIndex, parents); 
+                  } 
             } 
-      } 
 
-  } 
+        } 
+		private static void printPath(int currentVertex, int[] parents) 
+        { 
+			if (currentVertex == NO_PARENT) 
+			{ 
+				return; 
+			} 
+			printPath(parents[currentVertex], parents); 
+			System.out.print(currentVertex + " "); 
+        } 
 
-	public static void main(String args[]) {
-		 int n;
-	      int e;
-	      int s;
-	      SP2020_CSE373_Final_Q4_1711335 g = null;
-	      Scanner sc= new Scanner(System.in);
-	      
-	      String filename="FinalQ4INPUT.txt";
-	      try {
+		public static void main(String args[]) {
+			int n;
+			int e;
+			int s;
+			SP2020_CSE373_Final_Q4_1711335 g = null;
+			Scanner sc= new Scanner(System.in);
+			String filename="FinalQ4INPUT.txt";
+			
+			try {
 	          BufferedReader br;
 	          br = new BufferedReader(new FileReader(new File("C:\\Users\\Mim\\Documents\\Final\\FinalQ4Input.txt")));//open the file
 	         
@@ -124,7 +133,7 @@ import java.util.Scanner;
 	          e = Integer.parseInt(param[1]);
 	        
 
-		    g = new SP2020_CSE373_Final_Q4_1711335(n);
+	          g = new SP2020_CSE373_Final_Q4_1711335(n);
 	          System.out.println("Reading from FinalQ4Input.txt");
 	          System.out.println(n+" "+e);
 	            
@@ -136,45 +145,50 @@ import java.util.Scanner;
 	              else{
 	              System.out.print(br.readLine()+", ");
 	              }
-	            if(i%10==0){
+	              if(i%10==0)
+	              {
 	                System.out.println();
-	            }
+	              }
 	          }
-	            System.out.print("\nEdges:\n{");
+	          System.out.print("\nEdges:\n{");
 	            
-	            int count=0;
-		        while ((line=br.readLine()) != null) {//read a line 
-		           count++;
+	          int count=0;
+	          while ((line=br.readLine()) != null) {//read a line 
+	        	  count++;
 		          
-		          param = line.split(" ");
-		          int v = Integer.parseInt(param[0]);
-		          int w = Integer.parseInt(param[1]);
-		          int t = Integer.parseInt(param[1]);
+	        	  param = line.split(" ");
+		          	int v = Integer.parseInt(param[0]);
+		          	int w = Integer.parseInt(param[1]);
+		          	int t = Integer.parseInt(param[1]);
 		          
-		          if(count==e){
-		          System.out.print("(S:"+v+", D:"+w+", W:"+t+ ")}");
-		          }
-		          else{
-		          System.out.print("(S:"+v+", D:"+w+", W:" +t+"),");
-		          }
+		          	if(count==e)
+		          	{
+		          		System.out.print("(S:"+v+", D:"+w+", W:"+t+ ")}");
+		          	}
+		          	else{
+		          		System.out.print("(S:"+v+", D:"+w+", W:" +t+"),");
+		          	}
+		          	
+		          	g.addEdge(v, w , t);
 		          
-		          g.addEdge(v, w , t);
 		          
-		          
-		           if(count%5==0){
-		               System.out.println();
+		          	if(count%5==0){
+		          		System.out.println();
 		              
 		           }
-		      }
+	          }
 		        
-	      }
-	      
-	      catch (FileNotFoundException ex) {
-	          System.out.println("There was an exception! The file was not found!");
-	      } catch (IOException ex) {
-	          System.out.println("There was an exception handling The file!");
+			}
+			
+			catch (FileNotFoundException ex) 
+			{
+				System.out.println("There was an exception! The file was not found!");
+			} 
+				catch (IOException ex)
+			{
+					System.out.println("There was an exception handling The file!");
 
-	      }	 
+			}	 
 	      
+		}
 	}
-}
