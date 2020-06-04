@@ -85,6 +85,24 @@ import java.util.Scanner;
 				} 
 			} 
 		} 
+		private static void printSolution(int startVertex, int[] distances, int[] parents) 
+		{ 
+			int nVertices = distances.length; 
+			System.out.print("Vertex\t Distance\tPath"); 
+
+			for (int vertexIndex = 0; vertexIndex < nVertices; vertexIndex++) 
+            { 
+				if (vertexIndex != startVertex) 
+            { 
+					System.out.print("\n" + startVertex + " to "); 
+                    System.out.print(vertexIndex + " \t\t "); 
+                    System.out.print(distances[vertexIndex] + "\t\t"); 
+                    printPath(vertexIndex, parents); 
+            } 
+      } 
+
+  } 
+
 	public static void main(String args[]) {
 		 int n;
 	      int e;
